@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Use correct character set. -->
+    <meta charset="utf-8">
+    <!-- Tell IE to use the latest, best version. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>love</title>
+    <script src="./Cesium/Cesium.js"></script>
+    <script src="./dependence/jquery-3.2.1.min.js"></script>
+    <style>
+        @import url(./Cesium/Widgets/widgets.css);
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+
+        #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            float: left;
+            position: absolute;
+            z-index: 1
+        }
+
+        #info_ {
+            width: 260px;
+            height: 100%;
+            background-color: black;
+            float: left;
+            position: absolute;
+            opacity: 0.7;
+            z-index: 2;
+            color: white;
+            font-size: 20px;
+            font-family: "华文中宋";
+            text-align: left;
+        }
+        #right {
+            width: 200px;
+            height: 100%;
+            background-color: black;
+            right: 0px;
+            float: right;
+            position: absolute;
+            opacity: 0.1;
+            z-index: 2;
+            color: white;
+            font-size: 20px;
+            font-family: "华文中宋";
+            text-align: left;
+        }
+
+        #top {
+            width: 100%;
+            height: 50px;
+            background-color: black;
+            float: top;
+            position: absolute;
+            opacity: 0.8;
+            z-index: 3;
+            color: red;
+            font-size: 40px;
+            font-family: "华文中宋";
+            text-align: center;
+        }
+    </style>
+</head>
+<!-- 值此中秋佳节，热烈庆祝栋哥和琦宝宝在一起的第一个周年纪念日！！❤↔❤ -->
+<body>
+    <div id="top">
+        <a></a>
+    </div>
+    <div id="info_">
+        <a style="top: 70px;position:relative;left: 20px;color: red;font-size: 30px;"> 一周年纪念日颂</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 栋哥和琦宝,</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 是2018年中秋节在一起的，</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 那天，</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 月色很美。</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 今天，</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 是2019年中秋节，</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 月色更美。</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 时间过得好快，</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 不知不觉一年过去了，</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 希望未来4年，</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 也像这一年一样眨眼就过去！</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 不在一起的时候，</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 要各自努力加油。</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 我们，</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 会一直一直在一起的！</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 要克服一切困难，</a><br />
+        <a style="top: 70px;position:relative;left: 10px;"> 一起一直走下去！</a><br />
+    </div>
+    <div id="right">
+    </div>
+    <img src="data/heart.png" style="opacity: 1;right: 50%;top: 0px;z-index: 4;position: absolute;" />
+        <img src="data/flower.png" style="opacity: 1;left: 50px;bottom: 100px;z-index: 3;position: absolute;" />
+        <img src="data/man.png" style="opacity: 1;right: 100px;top: 100px;z-index: 3;position: absolute;" />
+        <img src="data/girl.png" style="opacity: 1;right: 50px;top: 100px;z-index: 3;position: absolute;" />
+        <img src="data/house.png" style="opacity: 1;right: 30px;top: 160px;z-index: 3;position: absolute;" />
+        <img src="data/dog.png" style="opacity: 1;right: 30px;top: 300px;z-index: 3;position: absolute;" />
+        <img src="data/cat.png" style="opacity: 1;right: 30px;top: 350px;z-index: 3;position: absolute;" />
+        <img src="data/foreast.png" style="opacity: 1;right: 30px;top: 400px;z-index: 3;position: absolute;" />
+    <div id="cesiumContainer">
+
+    </div>
+    <script src="./2dMark.js"></script>
+    <script>
+
+        var view = new Cesium.Viewer('cesiumContainer', {
+            // animation: false,
+            fullscreenButton: false,
+            homeButton: true,
+            infoBox: false,
+            sceneModePicker: false,
+            navigationHelpButton: false,
+            shouldAnimate: true,
+            selectionIndicator: false,
+            // timeline: false,
+            showRenderLoopErrors: false,
+            vrButton: false,
+            navigationHelpButton: false,
+            geocoder: false,
+            baseLayerPicker: false,
+
+            imageryProvider: new Cesium.ArcGisMapServerImageryProvider({
+                url: 'http://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/'
+            }),
+
+        });
+        view._cesiumWidget._creditContainer.style.display = "none";
+        view.scene.globe.enableLighting = false; //太阳光
+        view.animation.container.style.visibility = 'hidden';
+        view.timeline.container.style.visibility = 'hidden';
+        // view.clock.shouldAnimate = false;
+        var scene = view.scene;
+        var camera = scene.camera;
+
+        mark_2d(view, 'data/2dMark/', scene);
+
+    </script>
+</body>
+
+</html>
