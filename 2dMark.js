@@ -44,7 +44,7 @@ function mark_2d(view, dir_path, scene) {
 
 
 
-    positionArr = [[116.40, 39.90], [116.50, 40.90], [121.43, 37.45], [112.15, 37.55], [118.5, 34.5]];
+    positionArr = [[116.40, 39.90], [116.70, 40.20], [121.43, 37.45], [112.15, 37.55], [118.5, 34.5]];
     str_text = ["栋哥", "栋哥的姐姐", "琦宝", "栋哥的爸妈", "琦宝的爸妈"];
     image_path = "data/love.png";
     for (i = 0; i < 5; i++) {
@@ -128,14 +128,14 @@ function mark_2d(view, dir_path, scene) {
         }
     });
     material = new Cesium.PolylineTrailLinkMaterialProperty(Cesium.Color.ORANGE, 1000);
-    add_line(view, [116.40, 39.90, 116.50, 40.90], material);
+    add_line(view, [116.40, 39.90, 116.70, 40.20], material);
     add_line(view, [116.40, 39.90, 121.43, 37.45], material);
     add_line(view, [116.40, 39.90, 112.15, 37.55], material);
     add_line(view, [116.40, 39.90, 118.5, 34.5], material);
 
-    add_line(view, [116.50, 40.90, 121.43, 37.45], material);
-    add_line(view, [116.50, 40.90, 112.15, 37.55], material);
-    add_line(view, [116.50, 40.90, 118.5, 34.5], material);
+    add_line(view, [ 116.70, 40.20, 121.43, 37.45], material);
+    add_line(view, [116.70, 40.20, 112.15, 37.55], material);
+    add_line(view, [116.70, 40.20, 118.5, 34.5], material);
 
     add_line(view, [121.43, 37.45, 112.15, 37.55], material);
     add_line(view, [121.43, 37.45, 118.5, 34.5], material);
