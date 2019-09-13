@@ -54,7 +54,7 @@ function mark_2d(view, dir_path, scene) {
     // add 3d model
     var redSphere = view.entities.add({
         name : 'Red sphere with black outline',
-        position: Cesium.Cartesian3.fromDegrees(119.40, 37.90, 300000.0),
+        position: Cesium.Cartesian3.fromDegrees(119.30, 37.90, 600000.0),
         ellipsoid : {
             radii : new Cesium.Cartesian3(100000.0, 100000.0, 100000.0),
             material : 'data/moon.jpg',
@@ -65,10 +65,10 @@ function mark_2d(view, dir_path, scene) {
 
     // set init view
     view.camera.flyTo({
-        destination: Cesium.Cartesian3.fromDegrees(116.5, 32.7, 1500000.0),
+        destination: Cesium.Cartesian3.fromDegrees(116.5, 24.7, 1300000.0),
         orientation: {
             heading: Cesium.Math.toRadians(0.0),
-            pitch: Cesium.Math.toRadians(-70.0),
+            pitch: Cesium.Math.toRadians(-38.0),
             roll: 0.0
         }
     });
