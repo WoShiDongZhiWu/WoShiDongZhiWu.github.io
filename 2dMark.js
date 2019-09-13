@@ -54,7 +54,7 @@ function mark_2d(view, dir_path, scene) {
     // add 3d model
     var redSphere = view.entities.add({
         name : 'Red sphere with black outline',
-        position: Cesium.Cartesian3.fromDegrees(119.30, 37.90, 600000.0),
+        position: Cesium.Cartesian3.fromDegrees(119.30, 37.90, 650000.0),
         ellipsoid : {
             radii : new Cesium.Cartesian3(100000.0, 100000.0, 100000.0),
             material : 'data/moon.jpg',
